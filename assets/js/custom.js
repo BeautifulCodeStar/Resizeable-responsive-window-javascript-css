@@ -57,18 +57,19 @@ function start() {
     var main = document.getElementsByClassName("resize-drag")[0];
     var rect = circle.getBoundingClientRect();
     var left = parseInt(rect.left) - 15 + 'px';
-    var top = parseInt(main.offsetHeight) - 33 + 'px';
+    var top = parseInt(main.offsetHeight) - 40 + 'px';
 
     document.getElementsByClassName("resize-btn")[0].style.left = left;
     document.getElementsByClassName("resize-btn")[0].style.top = top;
-
+    
     var height = main.offsetHeight;
+    document.getElementsByClassName("line-bar")[0].style.top = height/2 -10 + 'px';
    
     document.getElementsByClassName('text')[0].style.fontSize = parseInt(height) * 3 / 100 + 'px';
     document.querySelector('div.circle').style.fontSize = parseInt(height) * 5 / 100 + 'px';
     document.getElementsByClassName('circle')[0].style.width = parseInt(height) * 8 / 100 + 'px';
     document.getElementsByClassName('circle')[0].style.height = parseInt(height) * 8 / 100 + 'px';
-    var real = parseInt(height) + parseInt(height) * 15 / 100;
+    var real = parseInt(height) + parseInt(height) * 15 / 100 - 8;
 
     document.getElementsByClassName('iphone-img')[0].style.height = real + 'px';
 }
@@ -97,6 +98,7 @@ function resizemove(event) {
         <div class="iphone">
                 <img class="iphone-img img-fluid" src="assets/imgs/phone-70.png" alt="phone" />
         </div>
+        <div class="line-bar"></div>
         <div class="description">
             <div class="point" align="center">
                 <div class="circle">

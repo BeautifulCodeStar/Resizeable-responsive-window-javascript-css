@@ -2,18 +2,20 @@ body {
     min-width: 360px;
 }
 .resize-drag {
-     display: flex;
-     justify-content: space-around;
-     background: linear-gradient(#ff650f, #fe2612);
-     color: white;
-     font-size: 20px;
-     font-family: sans-serif;
-     border-radius: 8px;
-     width: 100% !important;
-     max-width: 100%;
-     box-sizing: border-box;
-     height: 450px;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(#ff650f, #fe2612);
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 450px;
     max-height: 560.703px;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
  }
 
  .resize-container {
@@ -33,6 +35,19 @@ body {
     animation-delay: 0.6s;
  }
 
+ .iphone {
+    z-index: 20;
+ }
+
+ .line-bar {
+    position: fixed;
+    height: 5px;
+    width: 100%;
+    background: black;
+    z-index: 10;
+    top: 237px;
+ }
+
  .animation-body {
     animation: body;
     animation-timing-function: linear;
@@ -43,6 +58,7 @@ body {
  .description {
     display: grid;
     align-self: center;
+    z-index: 20;
  }
 
  p {

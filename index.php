@@ -14,7 +14,7 @@
     </head>
     
     
-    <script type="text/javascript" src="assets/js/interact.min.js"></script>
+    <script type="text/javascript" src="http://code.interactjs.io/v1.3.4/interact.min.js"></script>
     <script type="text/javascript" src="assets/js/custom.js"></script>
     
     <body onload="start()"  onresize="start(true)">
@@ -23,6 +23,7 @@
                 <div class="iphone">
                     <img class="iphone-img animation img-fluid" src="assets/imgs/phone-70.png" alt="phone" />
                 </div>
+                <div class="line-bar"></div>
                 <div class="description">
                     <div class="point" align="center">
                         <div class="circle">
