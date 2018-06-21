@@ -17,11 +17,23 @@
     <script type="text/javascript" src="assets/js/interact.min.js"></script>
     <script type="text/javascript" src="assets/js/custom.js"></script>
     
-    <body onload="start()"  onresize="start(true)">
-    <div class="resize-container">
+    <body onload="start()">
+    <div class="resize-container" onclick="stopAnimation()">
             <div class="resize-drag">
                 <div class="iphone">
-                    <img class="iphone-img animation img-fluid" src="assets/imgs/phone-70.png" alt="phone" />
+                    <img class="iphone-img animation img-fluid" src="assets/imgs/phone.png" alt="phone" />
+                    <div class="first-desc description">
+                        <div class="point" align="center">
+                            <div class="circle">
+                                <span class="circle-text">1</span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text">
+                               PON ACÁ TU CELULAR
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="line-bar"></div>
                 <div class="description">
@@ -32,18 +44,19 @@
                     </div>
                     <div>
                         <p class="text">
-                            DRAG THE ARROWS <br>
-                            TO ADJUST THE HEIGHT OF THE RED AREA <br>
-                            TO THE HEIGHT OF YOUR PHONE SCREEN
+                            AJUSTA EL TAMAÑO DEL ÁREA NARANJA<br> AL TAMAÑO DE LA PANTALLA DE TU CECULAR.
                         </p>
                     </div>
                 </div>
                 
-                <div class="resize-btn animation-btn">
-                    <i class="material-icons" style="">expand_less</i>
-                    <i class="material-icons">expand_more</i>
+                <div class="resize-btn animation-btn" onclick="stopAnimation()">
+                    <img src="assets/imgs/resize.png">
                 </div>
             </div>
+        </div>
+
+        <div class='start-block'>
+            <button class='start-btn'>iLISTO!</button>
         </div>
 
 

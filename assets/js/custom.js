@@ -30,8 +30,8 @@ function animation() {
     var move = () => {
         start();
         var main = document.getElementsByClassName('resize-drag')[0];
-        if (main.offsetHeight < 500) {
-            main.style.height = parseInt(main.offsetHeight) + 1 + 'px';
+        if (main.offsetHeight < 600) {
+            main.style.height = (main.offsetHeight + 2) + 'px';
         } else {
             clearInterval(interval)
             interval = setInterval(next, 20)
@@ -42,7 +42,7 @@ function animation() {
         start();
         var main = document.getElementsByClassName('resize-drag')[0];
         if (main.offsetHeight < 500) {
-            main.style.height = parseInt(main.offsetHeight) + 1 + 'px';
+            main.style.height = parseInt(main.offsetHeight) + 2 + 'px';
         } else {
             clearInterval(interval)
         }
@@ -52,14 +52,16 @@ function animation() {
     }
 }
 
-function start() {
-    var circle = document.getElementsByClassName('circle')[0];
-    var main = document.getElementsByClassName("resize-drag")[0];
-    var rect = circle.getBoundingClientRect();
-    var left = parseInt(rect.left) - 15 + 'px';
-    var top = parseInt(main.offsetHeight) - 40 + 'px';
+function stopAnimation() {
+    clearInterval(interval);
+}
 
-    document.getElementsByClassName("resize-btn")[0].style.left = left;
+function start() {
+    var circle = document.getElementsByClassName('circle')[1];
+    var main = document.getElementsByClassName("resize-drag")[0];
+    var left = circle.offsetLeft - 15 + 'px';
+    var top = parseInt(main.offsetHeight) - 46 + 'px';
+
     document.getElementsByClassName("resize-btn")[0].style.top = top;
     
     var height = main.offsetHeight;
@@ -73,6 +75,8 @@ function start() {
 
     document.getElementsByClassName('iphone-img')[0].style.height = real + 'px';
 }
+
+
 
 function resizemove(event) {
     var target = event.target,
@@ -96,7 +100,19 @@ function resizemove(event) {
     var content = document.getElementsByClassName('resize-drag')[0];
     var fragment = create(`
         <div class="iphone">
-                <img class="iphone-img img-fluid" src="assets/imgs/phone-70.png" alt="phone" />
+                <img class="iphone-img img-fluid" src="assets/imgs/phone.png" alt="phone" />
+                <div class="first-desc description">
+                    <div class="point" align="center">
+                        <div class="circle">
+                            <span class="circle-text">1</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text">
+                           PON ACÁ TU CELULAR
+                        </p>
+                    </div>
+                </div>
         </div>
         <div class="line-bar"></div>
         <div class="description">
@@ -107,15 +123,12 @@ function resizemove(event) {
             </div>
             <div>
                 <p class="text">
-                    DRAG THE ARROWS <br>
-                    TO ADJUST THE HEIGHT OF THE RED AREA <br>
-                    TO THE HEIGHT OF YOUR PHONE SCREEN
+                    AJUSTA EL TAMAÑO DEL ÁREA NARANJA<br> AL TAMAÑO DE LA PANTALLA DE TU CECULAR.
                 </p>
             </div>
         </div>
         <div class="resize-btn">
-            <i class="material-icons" style="">expand_less</i>
-            <i class="material-icons">expand_more</i>
+            <img src="assets/imgs/resize.png">
         </div>
     `);
     var main = document.getElementsByClassName("resize-drag")[0];
@@ -131,7 +144,7 @@ function resizemove(event) {
 interact('.resize-drag,body')
   .resizable({
     // resize from all edges and corners
-    edges: { left: false, right: false, bottom: true, top: true },
+    edges: { left: false, right: false, bottom: true, top: false },
     // keep the edges inside the parent
     restrictEdges: {
       outer: 'parent',
@@ -145,8 +158,8 @@ interact('.resize-drag,body')
       },
     // minimum size
     restrictSize: {
-      min: { width: 300, height: 188 },
-      max: { width: '100%', height: 600.703 },
+      min: { width: 300, height: 300 },
+      max: { width: '100%', height: '100%' },
     },
     inertia: true,
     // allowFrom: '.resize-drag'

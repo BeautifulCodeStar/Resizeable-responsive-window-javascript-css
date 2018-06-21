@@ -1,21 +1,41 @@
 body {
-    min-width: 360px;
+    min-width: 500px;
 }
 .resize-drag {
     display: flex;
     justify-content: space-around;
-    background: linear-gradient(#ff650f, #fe2612);
+    background: #e56b10;
     color: white;
     font-size: 20px;
     font-family: sans-serif;
     border-radius: 8px;
     width: 100% !important;
-    max-width: 100%;
     box-sizing: border-box;
     height: 450px;
-    max-height: 560.703px;
+    font-family: saker-sans;
+    min-height: 300px;
+    min-width: 500px;
     border-bottom: 5px solid black;
     border-top: 5px solid black;
+    animation: blinker 1s linear infinite;
+ }
+
+@font-face {
+    font-family: saker-sans;
+    src: url('../fonts/SakerSansBold_PERSONAL_USE.ttf');
+}
+
+ .circle {
+    width: 70px !important;
+    height: 70px !important;
+    margin: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: #e56b10;
+    background: white;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 2.3em !important;
  }
 
  .resize-container {
@@ -36,6 +56,8 @@ body {
  }
 
  .iphone {
+    position: relative;
+    display: flex;
     z-index: 20;
  }
 
@@ -46,6 +68,7 @@ body {
     background: black;
     z-index: 10;
     top: 237px;
+    animation: line-blinker 1s linear infinite;
  }
 
  .animation-body {
@@ -53,6 +76,7 @@ body {
     animation-timing-function: linear;
     animation-duration: 1s;
     animation-delay: 1s;
+    animation-fill-mode: forwards;
  }
 
  .description {
@@ -63,11 +87,37 @@ body {
 
  p {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 1.8em !important;
  }
+
+
+ .description {
+    display: grid;
+    align-self: center;
+    /*z-index: 20;*/
+ }
+
+.first-desc div {
+    z-index: 10;
+}
+
+.first-desc {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
 
  .iphone-img {
      height: 516px;
+     margin-top: -30px;
  }
 
  .point {
@@ -76,25 +126,34 @@ body {
  }
 
  .resize-btn {
-    width: 66px;
-    height: 66px;
+    width: 93px;
+    height: 93px;
     border-radius: 50%;
     position: absolute;
     cursor:n-resize;
-    background: linear-gradient(#ff650f, #fe2612);
-
+    background: #ed4149;
+    padding: 8px;
     text-align: center;
     top: 490px;
+    right: 25%;
  }
 
- .circle {
-    width: 35px;
-    height: 35px;
-    margin: 10px;
-    border-radius: 50%;
-    border: 1px solid white;
-    text-align: center;
+  .start-btn {
+    background: #e56b10;
+    color: white;
+    font-family: saker-sans;
+    font-size: 4em;
+    border-radius: 25px;
+    width: 230px;
+    cursor: pointer;
  }
+
+ .start-block {
+    display: flex;
+    justify-content: flex-end;
+    width: 79%;
+    margin-top: 10vh;
+}
 
  @keyframes iphone {
     0% { transform: translateY(700px); }
@@ -112,6 +171,19 @@ body {
     0% { transform: scale(1,1); }
     100% { transform: scale(1.5, 1.5); }
  }
+
+@keyframes blinker {
+  100% {
+    border-color: white;
+    border-color: white;
+  }
+}
+
+@keyframes line-blinker {
+  100% {
+    background: white;
+  }
+}
 
 svg {
     color: white !important;
