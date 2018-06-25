@@ -15,7 +15,7 @@
             ga('send', 'pageview');
         </script>
         <!-- End Google Analytics -->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i|Montserrat:400,700" rel="stylesheet">
@@ -25,8 +25,8 @@
     </head>
     
     
-    <script type="text/javascript" src="assets/js/interact.min.js"></script>
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="../assets/js/interact.min.js"></script>
+    <script type="text/javascript" src="../assets/js/custom.js"></script>
     
       <body onload="start()">
     <div class="resize-container" onclick="stopAnimation()">
